@@ -5,42 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Education Dashboards</title>
   <style>
-    /* Global styles */
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
+      height: 100vh;
       font-family: system-ui, sans-serif;
       background: #0b1120;
       color: #e5e7eb;
-    }
-
-    /* Common hidden container */
-    .hidden {
-      display: none;
-    }
-
-    /* Landing page styles */
-    #landing {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       text-align: center;
-      background: #0b1120;
     }
 
-    #landing h1 {
+    h1 {
       font-size: 2rem;
       color: #3b82f6;
       margin-bottom: 1rem;
     }
 
-    #landing p {
+    p {
       color: #cbd5e1;
       margin-bottom: 2rem;
-      font-size: 1rem;
     }
 
     .options {
@@ -64,6 +50,7 @@
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
       cursor: pointer;
       transition: all 0.3s ease;
+      text-decoration: none;
     }
 
     .card:hover {
@@ -82,104 +69,27 @@
       color: #cbd5e1;
       max-width: 240px;
     }
-
-    /* Dashboard view */
-    .dashboard {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 2rem 1rem;
-      text-align: center;
-      scroll-snap-align: start;
-    }
-
-    iframe {
-      width: 90vw;
-      height: 75vh;
-      border: 2px solid #1f2937;
-      border-radius: 12px;
-      background: #111827;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-    }
-
-    button.back {
-      margin-top: 1rem;
-      background: #3b82f6;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-
-    button.back:hover {
-      background: #2563eb;
-    }
   </style>
 </head>
 <body>
+  <h1>Education Data Visualizations</h1>
+  <p>Select a dashboard to explore insights on student retention and dropout trends.</p>
 
-  <!-- Landing Page -->
-  <div id="landing">
-    <h1>Education Data Visualizations</h1>
-    <p>Select a dashboard to explore insights on student retention and dropout trends.</p>
+  <div class="options">
+    <a href="https://retention-infrastructure-dashboard.vercel.app" class="card" target="_blank">
+      <h2>Infrastructure & Retention</h2>
+      <p>Impact of teachers and facilities on student retention.</p>
+    </a>
 
-    <div class="options">
-      <div class="card" onclick="showDashboard('infra')">
-        <h2>Infrastructure & Retention</h2>
-        <p>Impact of teachers and facilities on student retention.</p>
-      </div>
+    <a href="https://v0-urban-rural-retention-analysis.vercel.app" class="card" target="_blank">
+      <h2>Urban–Rural Analysis</h2>
+      <p>Comparing dropout and retention patterns between districts.</p>
+    </a>
 
-      <div class="card" onclick="showDashboard('urban')">
-        <h2>Urban–Rural Analysis</h2>
-        <p>Comparing dropout and retention patterns between districts.</p>
-      </div>
-
-      <div class="card" onclick="showDashboard('socio')">
-        <h2>Socioeconomic Factors</h2>
-        <p>Influence of income, parental education, and employment.</p>
-      </div>
-    </div>
+    <a href="https://socioeconomic-factors-dropout.vercel.app" class="card" target="_blank">
+      <h2>Socioeconomic Factors</h2>
+      <p>Influence of income, parental education, and employment.</p>
+    </a>
   </div>
-
-  <!-- Dashboard Sections -->
-  <div id="infra" class="hidden dashboard">
-    <h2>Infrastructure and Retention</h2>
-    <p>This dashboard explores how the availability of teachers and functional toilets affects student retention rates across districts.</p>
-    <iframe src="https://retention-infrastructure-dashboard.vercel.app"></iframe>
-    <button class="back" onclick="goHome()">← Back to Home</button>
-  </div>
-
-  <div id="urban" class="hidden dashboard">
-    <h2>Urban–Rural Retention Analysis</h2>
-    <p>This visualization compares dropout and retention patterns between urban and rural districts to identify geographical disparities.</p>
-    <iframe src="https://v0-urban-rural-retention-analysis.vercel.app"></iframe>
-    <button class="back" onclick="goHome()">← Back to Home</button>
-  </div>
-
-  <div id="socio" class="hidden dashboard">
-    <h2>Socioeconomic Factors and Dropout</h2>
-    <p>This dashboard examines how household income, parental education, and employment status relate to student enrolment and dropout rates.</p>
-    <iframe src="https://socioeconomic-factors-dropout.vercel.app"></iframe>
-    <button class="back" onclick="goHome()">← Back to Home</button>
-  </div>
-
-  <!-- JavaScript -->
-  <script>
-    function showDashboard(id) {
-      document.getElementById('landing').classList.add('hidden');
-      document.getElementById(id).classList.remove('hidden');
-      window.scrollTo(0, 0);
-    }
-
-    function goHome() {
-      document.querySelectorAll('.dashboard').forEach(d => d.classList.add('hidden'));
-      document.getElementById('landing').classList.remove('hidden');
-      window.scrollTo(0, 0);
-    }
-  </script>
 </body>
 </html>
