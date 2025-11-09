@@ -12,8 +12,8 @@
       scroll-snap-type: y mandatory;
       overflow-y: scroll;
       font-family: system-ui, sans-serif;
-      background: #f5f5f5;
-      color: #222;
+      background: #0b1120; /* dark navy background */
+      color: #e5e7eb; /* light gray text */
     }
 
     section {
@@ -24,58 +24,63 @@
       justify-content: flex-start;
       text-align: center;
       scroll-snap-align: start;
-      padding: 1rem;
+      padding: 2rem 1rem;
       box-sizing: border-box;
     }
 
     h2 {
       margin: 1rem 0 0.5rem;
-      font-size: 1.6rem;
-      color: #0070f3;
+      font-size: 1.8rem;
+      color: #3b82f6; /* bright blue heading */
     }
 
     p {
       font-size: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       max-width: 800px;
+      color: #cbd5e1; /* muted gray */
     }
 
     iframe {
       width: 90vw;
       height: 75vh;
-      border: 2px solid #ccc;
-      border-radius: 10px;
-      background: white;
+      border: 2px solid #1f2937;
+      border-radius: 12px;
+      background: #111827; /* match dark dashboards */
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
 
-    /* Optional: a subtle scrollbar look */
+    /* Optional: sleek scrollbar */
     ::-webkit-scrollbar {
       width: 10px;
     }
     ::-webkit-scrollbar-thumb {
-      background-color: #aaa;
+      background-color: #374151;
       border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #4b5563;
     }
   </style>
 </head>
 <body>
   <!-- Section 1 -->
   <section>
-    <h2>Infrastructure and Retention</h2>
+    <h2>Infrastructure and Student Retention Analysis</h2>
     <p>This dashboard explores how the availability of teachers and functional toilets affects student retention rates across districts.</p>
     <iframe src="https://retention-infrastructure-dashboard.vercel.app"></iframe>
   </section>
 
   <!-- Section 2 -->
   <section>
-    <h2>Urban–Rural Retention Analysis</h2>
+    <h2>Urban–Rural Student Retention and Dropout Analysis</h2>
     <p>This visualization compares dropout and retention patterns between urban and rural districts to identify geographical disparities.</p>
     <iframe src="https://v0-urban-rural-retention-analysis.vercel.app"></iframe>
   </section>
 
   <!-- Section 3 -->
   <section>
-    <h2>Socioeconomic Factors and Dropout</h2>
+    <h2>Socioeconomic Factors and Student Dropout Analysis</h2>
     <p>This dashboard examines how household income, parental education, and employment status relate to student enrolment and dropout rates.</p>
     <iframe src="https://socioeconomic-factors-dropout.vercel.app"></iframe>
   </section>
